@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>海淘折扣</title>
+    <link rel="shortcut icon" href="./images/bitbug_favicon.ico"/>
+    <!--引用第三方的样式-->
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+    <!--引用样式重置文件-->
+    <link rel="stylesheet/less" href="./css/base.less">
+    <!--引用自己的样式文件-->
+    <link rel="stylesheet/less" href="./css/moneyproduct.less">
+    <!--引用less.js-->
+    <script src="./lib/less/less.min.js"></script>
+</head>
+
+<body>
+<!--头部 B-->
+<header id="header">
+    <a href="index.html" class="yharr">
+        <img src="./images/youhuiarr.png" alt=""/>
+    </a>
+
+    <p>海淘折扣</p>
+    <a href="#" class="app">
+        <img src="./images/header_app.png" alt=""/>
+    </a>
+</header>
+<!--头部 E-->
+<!--商品信息 B-->
+<section id="pro_content">
+   <div class="moneyproduct" id="recommen-product"></div>
+</section>
+<!--商品信息 E-->
+<!--尾部 B-->
+<footer id="footer">
+    <div class="row">
+        <div class="col-xs-4"><a href="#">登录</a></div>
+        <div class="col-xs-4"><a href="#">注册</a></div>
+        <div class="col-xs-4"><a href="#">
+            <img src="images/top.fw.png" alt=""/>
+            返回顶部</a></div>
+    </div>
+    <p>
+        <a href="#">手机app下载</a>
+        <a href="#">慢慢买手机版</a>
+        --掌上比价平台
+    </p>
+
+    <p>m.manmanbuy.com </p>
+</footer>
+<!--尾部 E-->
+</body>
+<!--商品信息模板 B-->
+<script type="text/html" id="moneyProductTpl">
+    {{each result as value i}}
+    <div class="container">
+        <div class="cu-content">
+            <h3 class="title">
+                {{value.productName}}</h3>
+            <h4></h4>
+
+            <div class="info">
+                <span class="mall">{{value.productForm}}</span> <span class="addtime" style="margin-right: 4px;">{{value.productTime}}</span>
+                <span class="author">{{value.productTips}}</span>
+            </div>
+            <div class="content clearfix">
+                <div class="picwrap">
+                    {{#value.productImgSm}}
+                </div>
+                <div class="conn">
+                    <!--内容开始-->
+                    <p>{{value.productInfo}}</p>
+
+                    <p>{{#value.productImg}}</p>
+
+                    <p>{{#value.productInfo1}}</p>
+
+                    <p>{{#value.productInfo3}}</p>
+
+                    <p>{{#value.productImg2}}</p>
+                    <!--<p>{{#value.productImg3}}</p>-->
+                </div>
+                <div>
+                    {{#value.productCity}}
+                </div>
+                <div class="golink">
+                    <a href="redirect.aspx?tjid=521575&amp;y=cu_share" target="_blank"><i
+                            class="icon-gobuy"></i>前往购买</a></div>
+            </div>
+            <div style="text-align: center; margin: 20px 10px;">
+                <img src="images/mmbweixin2.png" style="width: 100%; height: auto;">
+            </div>
+            <div class="cu-content-pl ui-border-t">
+                {{#value.productComment}}
+            </div>
+        </div>
+    </div>
+        {{/each}}
+</script>
+
+<!--商品信息模板 E-->
+
+<!--引用jq-->
+<script src="./lib/jquery/jquery.js"></script>
+<!--引用bootstrap.js-->
+<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+
+<!--引用template.js-->
+<script src="./lib/template/template.js"></script>
+<!--引用自己的js-->
+<script src="./js/moneyproduct.js"></script>
+
+</html>

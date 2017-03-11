@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>优惠券--慢慢买</title>
+    <link rel="shortcut icon" href="./images/bitbug_favicon.ico"/>
+    <!--引用第三方的样式-->
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+    <!--引用样式重置文件-->
+    <link rel="stylesheet/less" href="./css/base.less">
+    <!--引用自己的样式文件-->
+    <link rel="stylesheet/less" href="./css/quan.less">
+    <!--引用less.js-->
+    <script src="./lib/less/less.min.js"></script>
+</head>
+
+<body>
+<!--头部 B-->
+<header id="header">
+    <a href="coupon.html" class="yharr">
+        <img src="./images/youhuiarr.png" alt=""/>
+    </a>
+    <p></p>
+    <a href="#" class="app">
+        <img src="./images/header_app.png" alt=""/>
+    </a>
+</header>
+<!--头部 E-->
+<!--提示信息 B-->
+<p class="quanhint">--点餐前出示手机中的优惠券，即可享受优惠--</p>
+<!--提示信息 E-->
+<!--详细优惠信息 B-->
+<section id="quanBox"></section>
+<!--详细优惠信息 E-->
+
+<!--导航条 B-->
+<section id="nav">
+    <a href="index.html">首页</a>
+    &nbsp;>&nbsp;
+    <a href="coupon.html">优惠券</a>
+    &nbsp;>&nbsp;
+    <a href="#"></a>
+</section>
+<!--导航条 E-->
+<!--尾部 B-->
+<footer id="footer">
+    <div class="row">
+        <div class="col-xs-4"><a href="#">登录</a></div>
+        <div class="col-xs-4"><a href="#">注册</a></div>
+        <div class="col-xs-4"><a href="#">
+            <img src="images/top.fw.png" alt=""/>
+            返回顶部</a></div>
+    </div>
+    <p>
+        <a href="#">手机app下载</a>
+        <a href="#">慢慢买手机版</a>
+        --掌上比价平台
+    </p>
+
+    <p>m.manmanbuy.com </p>
+</footer>
+<!--尾部 E-->
+</body>
+<!--&lt;!&ndash;头部信息模板 B&ndash;&gt;-->
+<!--<script type="text/html" id="getheadmess">-->
+    <!--{{each result as value i}}-->
+    <!--<p>{{value.couponTitle}}优惠券</p>-->
+    <!--{{/each}}-->
+<!--</script>-->
+<!--&lt;!&ndash;头部信息模板 E&ndash;&gt;-->
+
+<!--详细优惠信息 B-->
+<script type="text/html" id="getMoreMess">
+    {{each result as value i}}
+    <div class="mess">
+        <a href="javascript:;" class="clearfix">
+            {{#value.couponProductImg}}
+            <div  class="messright">
+                <h3>{{value.couponProductName}}</h3>
+                <p>{{value.couponProductPrice}}</p>
+                <p>{{value.couponProductTime}}</p>
+            </div>
+            <i></i>
+        </a>
+        <div class="placeholder">
+            {{#value.couponProductImg}}
+        </div>
+    </div>
+    {{/each}}
+</script>
+<!--详细优惠信息 E-->
+
+<!--引用jq-->
+<script src="./lib/jquery/jquery.js"></script>
+<!--引用bootstrap.js-->
+<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+
+<!--引用template.js-->
+<script src="./lib/template/template.js"></script>
+<!--引用自己的js-->
+<script src="./js/quan.js"></script>
+
+</html>
